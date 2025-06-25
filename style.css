@@ -436,6 +436,170 @@ button[type="submit"]:hover {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* Dark Mode Toggle Button */
+.theme-toggle {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+/* Optional icon (using pseudo-element) */
+.theme-toggle::before {
+  content: "🌓";
+  font-size: 1.1rem;
+}
+
+/* Dark mode specific styles */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: #e0e0e0;
+}
+
+body.dark-mode .theme-toggle {
+  background-color: var(--highlight-color);
+  color: var(--primary-color);
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* Responsive positioning */
+@media (max-width: 768px) {
+  .theme-toggle {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+#backToTop:active {
+  transform: scale(0.95);
+}
+
+/* Arrow icon styling */
+#backToTop::before {
+  content: "⬆️";
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+/* Text label (hidden by default, shows on hover) */
+#backToTop span {
+  display: none;
+  margin-left: 0.5rem;
+}
+
+#backToTop:hover span {
+  display: inline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #backToTop {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+  }
+  
+  #backToTop:hover {
+    width: auto;
+    padding: 0 1rem;
+    border-radius: 25px;
+  }
+  
+  #backToTop:hover::before {
+    margin-right: 0.3rem;
+  }
+}
+/* Like Button - Minimal CSS to avoid JS conflicts */
+.like-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+}
+
+.like-btn:hover {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+}
+
+.like-count {
+  margin-left: 0.3rem;
+  font-weight: 600;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .contact-section {
