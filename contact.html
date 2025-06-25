@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jirani Travels</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Jirani Travels</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destination.html">Destinations</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Get in Touch</h2>
+      <p>Have a travel story, suggestion, or just want to say hi? Reach out below.</p>
+
+      <form onsubmit="handleForm(event)">
+        <label for="name">Name:</label><br/>
+        <input type="text" id="name" required><br/><br/>
+
+        <label for="email">Email:</label><br/>
+        <input type="email" id="email" required><br/><br/>
+
+        <label for="message">Message:</label><br/>
+        <textarea id="message" rows="5" required></textarea><br/><br/>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Jirani Travels. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleForm(event) {
+      event.preventDefault();
+      alert("Thank you for your message! We'll get back to you soon.");
+    }
+  </script>
+</body>
+</html>
